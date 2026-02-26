@@ -47,6 +47,7 @@ export default function LeadModal({
     const params = new URLSearchParams({
       asset: asset.slug,
       name: name.trim(),
+      flow: 'download-pdf',
     })
 
     onClose()
