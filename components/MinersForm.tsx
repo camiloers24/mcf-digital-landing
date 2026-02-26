@@ -82,7 +82,11 @@ export default function MinersForm({ id }: MinersFormProps) {
         throw new Error(`Request failed: ${res.status}`)
       }
 
-      router.push('/thanks?asset=miners-intake')
+      const params = new URLSearchParams({
+        asset: 'miners-intake',
+        name: name.trim(),
+      })
+      router.push(`/thanks?${params.toString()}`)
     } catch (err) {
       console.error('Miners form error', err)
       setError('Something went wrong sending your details. Please try again.')

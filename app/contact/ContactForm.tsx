@@ -61,7 +61,11 @@ export default function ContactForm() {
     } catch (err) {
       console.error('Network error', err)
     }
-    router.push('/thanks?asset=contact')
+    const params = new URLSearchParams({
+      asset: 'contact',
+      name: name.trim(),
+    })
+    router.push(`/thanks?${params.toString()}`)
   }
 
   return (

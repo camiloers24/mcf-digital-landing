@@ -84,7 +84,11 @@ export default function InvestorsForm({ id }: InvestorsFormProps) {
         throw new Error(`Request failed: ${res.status}`)
       }
 
-      router.push('/thanks?asset=investor-intake')
+      const params = new URLSearchParams({
+        asset: 'investor-intake',
+        name: name.trim(),
+      })
+      router.push(`/thanks?${params.toString()}`)
     } catch (err) {
       console.error('Investor form error', err)
       setError('Something went wrong sending your details. Please try again.')

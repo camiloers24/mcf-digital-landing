@@ -103,7 +103,11 @@ export default function FlarePadForm({ id }: FlarePadFormProps) {
         throw new Error(`Request failed: ${res.status}`)
       }
 
-      router.push('/thanks?asset=flare-pad-intake')
+      const params = new URLSearchParams({
+        asset: 'flare-pad-intake',
+        name: name.trim(),
+      })
+      router.push(`/thanks?${params.toString()}`)
     } catch (err) {
       console.error('Flare pad form error', err)
       setError('Something went wrong sending your details. Please try again.')

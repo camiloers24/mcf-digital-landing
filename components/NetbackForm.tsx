@@ -86,7 +86,11 @@ export default function NetbackForm({ id }: NetbackFormProps) {
         throw new Error(`Request failed: ${res.status}`)
       }
 
-      router.push('/thanks?asset=netback-intake')
+      const params = new URLSearchParams({
+        asset: 'netback-intake',
+        name: name.trim(),
+      })
+      router.push(`/thanks?${params.toString()}`)
     } catch (err) {
       console.error('Netback form error', err)
       setError('Something went wrong sending your details. Please try again.')

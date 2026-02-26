@@ -44,8 +44,13 @@ export default function LeadModal({
       console.error('Network error sending lead:', err)
     }
 
+    const params = new URLSearchParams({
+      asset: asset.slug,
+      name: name.trim(),
+    })
+
     onClose()
-    router.push(`/thanks?asset=${encodeURIComponent(asset.slug)}`)
+    router.push(`/thanks?${params.toString()}`)
   }
 
   return (
