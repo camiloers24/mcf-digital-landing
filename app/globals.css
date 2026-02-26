@@ -127,6 +127,23 @@ section{padding:72px 0;border-bottom:1px solid var(--line)}
 .hero .scrim{position:absolute;inset:0;background:radial-gradient(60% 60% at 50% 35%, transparent 0%, rgba(11,15,19,.35) 65%, rgba(11,15,19,.9) 100%)}
 .hero .content{position:relative;z-index:2;padding:96px 0 84px;text-align:center}
 .cta-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.hero-intel-cta{
+  width:min(100%, 600px);
+  margin:28px auto 0;
+}
+.hero-intel-cta .btn{
+  width:100%;
+  justify-content:center;
+  min-height:74px;
+  padding:20px 34px;
+  font-size:clamp(1.08rem, 2.2vw, 1.45rem);
+  font-weight:800;
+  border-radius:18px;
+}
+.intel-btn{
+  box-shadow:0 0 0 1px rgba(255,180,0,.45) inset, 0 0 22px rgba(255,180,0,.26), var(--glow);
+  letter-spacing:.015em;
+}
 
 .hero .hero-inner{
   display:flex;
@@ -344,6 +361,41 @@ select::-ms-expand{display:none}
 @media (max-width:480px){
   .fab-contact{padding:10px 12px}
   .fab-contact span{display:none} /* icon-only on very small screens */
+}
+
+/* Floating intelligence button */
+.fab-intel{
+  position:fixed;right:18px;bottom:74px;z-index:9998;
+  display:inline-flex;align-items:center;gap:8px;
+  padding:12px 14px;border-radius:999px;border:1px solid #ffcd58;
+  background:linear-gradient(180deg,#ffcf60 0%, #ffb400 100%);
+  color:#0b0f13;
+  box-shadow:0 0 0 2px rgba(255,180,0,.18) inset, 0 10px 28px rgba(255,180,0,.2), 0 6px 20px rgba(0,0,0,.3);
+  transition:transform .08s ease, filter .18s ease, box-shadow .18s ease;
+  font-weight:700;
+}
+.fab-intel:hover{filter:brightness(.97);text-decoration:none;box-shadow:0 0 0 2px rgba(255,180,0,.25) inset, 0 14px 30px rgba(255,180,0,.25), 0 10px 24px rgba(0,0,0,.35)}
+.fab-intel:active{transform:translateY(1px)}
+@media (max-width:480px){
+  .fab-intel{padding:10px 12px;bottom:66px}
+  .fab-intel span{display:none}
+}
+
+/* Intelligence coming soon hero */
+.hero.intelligence-hero .hero-bg{
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(700px 340px at 16% 30%, rgba(255,180,0,.26) 0%, rgba(255,180,0,0) 68%),
+    radial-gradient(680px 360px at 84% 40%, rgba(255,214,120,.18) 0%, rgba(255,214,120,0) 72%),
+    linear-gradient(130deg, #0b0f13 0%, #111821 45%, #0d131a 100%);
+  transform:scale(1.03);
+  animation:intelBgPulse 6s ease-in-out infinite alternate;
+  pointer-events:none;
+}
+@keyframes intelBgPulse{
+  from{filter:saturate(1) brightness(1)}
+  to{filter:saturate(1.1) brightness(1.05)}
 }
 
 /* Media (video + illustration captions) */

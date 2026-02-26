@@ -8,6 +8,7 @@ import { LeadProvider } from '../components/LeadContext'
 import ProgressBar from '../components/ProgressBar'
 import SiteNav from '../components/SiteNav'
 import ContactFab from '../components/ContactFab'
+import IntelligenceFab from '../components/IntelligenceFab'
 
 export const metadata: Metadata = {
   title: 'Turn Stranded Gas Into Bitcoin Production | MCF.DIGITAL',
@@ -50,6 +51,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </div>
           </footer>
 
+          <IntelligenceFab />
           <ContactFab />
         </LeadProvider>
       </body>
