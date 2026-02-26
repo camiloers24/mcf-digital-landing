@@ -1,5 +1,6 @@
 // app/layout.tsx
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import './globals.css'
 
 // ⬇️ switch alias imports to relative paths
@@ -40,7 +41,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <footer className="wrap">
             <div className="foot">
               <div>© {new Date().getFullYear()} MCF.DIGITAL</div>
-              <div>Built for the field.</div>
+              <div>
+                <Link href="/terms-of-use">Terms of Use</Link> ·{' '}
+                <Link href="/privacy-policy">Privacy Policy</Link> ·{' '}
+                <Link href="/cookie-policy">Cookie Policy</Link> ·{' '}
+                <Link href="/copyright-notice">Copyright Notice</Link> · Built for the field.
+              </div>
             </div>
           </footer>
 
