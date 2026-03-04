@@ -29,7 +29,7 @@ export default function HomePage() {
             <Link className="btn" href="/contact?topic=talk-to-engineer">Talk to an engineer</Link>
           </div>
           <div className="hero-intel-cta">
-            <Link className="btn acc lg intel-btn" href="/intelligence">
+            <Link className="btn acc lg intel-btn" href="https://mcftools.net/" target="_blank" rel="noopener noreferrer">
               Try MCF.Digital Intelligence
             </Link>
           </div>
