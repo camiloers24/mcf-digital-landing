@@ -1,4 +1,20 @@
 import Link from 'next/link'
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'MCF.DIGITAL Intelligence Coming Soon',
+  description:
+    'MCF.DIGITAL Intelligence is launching soon with field-ready tools to evaluate stranded gas and bitcoin compute opportunities.',
+  openGraph: {
+    title: 'MCF.DIGITAL Intelligence Coming Soon',
+    description:
+      'MCF.DIGITAL Intelligence is launching soon with field-ready tools to evaluate stranded gas and bitcoin compute opportunities.',
+    type: 'website',
+  },
+  alternates: {
+    canonical: '/intelligence',
+  },
+}
 
 export default function IntelligenceComingSoonPage() {
   return (

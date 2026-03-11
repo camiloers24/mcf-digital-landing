@@ -1,4 +1,20 @@
 import Link from 'next/link'
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Cookie Policy | MCF.DIGITAL',
+  description:
+    'Learn how MCF.DIGITAL uses cookies and browser storage, what data is stored locally, and how to manage your preferences.',
+  openGraph: {
+    title: 'Cookie Policy | MCF.DIGITAL',
+    description:
+      'Learn how MCF.DIGITAL uses cookies and browser storage, what data is stored locally, and how to manage your preferences.',
+    type: 'website',
+  },
+  alternates: {
+    canonical: '/cookie-policy',
+  },
+}
 
 export default function CookiePolicyPage() {
   return (

@@ -1,4 +1,20 @@
 import Link from 'next/link'
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Terms of Use | MCF.DIGITAL',
+  description:
+    'Review the terms governing use of the MCF.DIGITAL platform, including limitations, responsibilities, and legal conditions.',
+  openGraph: {
+    title: 'Terms of Use | MCF.DIGITAL',
+    description:
+      'Review the terms governing use of the MCF.DIGITAL platform, including limitations, responsibilities, and legal conditions.',
+    type: 'website',
+  },
+  alternates: {
+    canonical: '/terms-of-use',
+  },
+}
 
 export default function TermsOfUsePage() {
   return (

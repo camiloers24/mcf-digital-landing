@@ -1,4 +1,24 @@
 import Link from 'next/link'
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Thank You | MCF.DIGITAL',
+  description:
+    'Confirmation page for submitted forms and requested downloads on MCF.DIGITAL.',
+  openGraph: {
+    title: 'Thank You | MCF.DIGITAL',
+    description:
+      'Confirmation page for submitted forms and requested downloads on MCF.DIGITAL.',
+    type: 'website',
+  },
+  alternates: {
+    canonical: '/thanks',
+  },
+  robots: {
+    index: false,
+    follow: false,
+  },
+}
 
 type ThanksContent = {
   title: string

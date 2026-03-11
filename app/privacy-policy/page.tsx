@@ -1,4 +1,20 @@
 import Link from 'next/link'
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Privacy Policy & GDPR | MCF.DIGITAL',
+  description:
+    'Read how MCF.DIGITAL collects, uses, and protects data, including GDPR and CCPA rights for platform users.',
+  openGraph: {
+    title: 'Privacy Policy & GDPR | MCF.DIGITAL',
+    description:
+      'Read how MCF.DIGITAL collects, uses, and protects data, including GDPR and CCPA rights for platform users.',
+    type: 'website',
+  },
+  alternates: {
+    canonical: '/privacy-policy',
+  },
+}
 
 export default function PrivacyPolicyPage() {
   return (

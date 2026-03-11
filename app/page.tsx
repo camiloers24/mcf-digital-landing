@@ -1,7 +1,23 @@
 import Link from 'next/link'
+import type { Metadata } from 'next'
 import DownloadButton from '../components/DownloadButton'
 import IllustrationStrip from '../components/IllustrationStrip'
 import HeroVideo from '../components/HeroVideo'
+
+export const metadata: Metadata = {
+  title: 'Turn Stranded and Low-Value Gas Into Bitcoin Production | MCF.DIGITAL',
+  description:
+    'MCF.DIGITAL matches operators, miners, and capital, then builds and runs on-lease power and compute so stranded gas becomes productive bitcoin output.',
+  openGraph: {
+    title: 'Turn Stranded and Low-Value Gas Into Bitcoin Production | MCF.DIGITAL',
+    description:
+      'MCF.DIGITAL matches operators, miners, and capital, then builds and runs on-lease power and compute so stranded gas becomes productive bitcoin output.',
+    type: 'website',
+  },
+  alternates: {
+    canonical: '/',
+  },
+}
 
 export default function HomePage() {
   return (

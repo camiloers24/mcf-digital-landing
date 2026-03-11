@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     type: 'article',
   },
   alternates: {
-    canonical: '/investors',
+    canonical: '/hnwi-family-offices',
   },
 }
 

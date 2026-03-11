@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     type: 'article',
   },
   alternates: {
-    canonical: '/netbacks',
+    canonical: '/low-netback',
   },
 }
 

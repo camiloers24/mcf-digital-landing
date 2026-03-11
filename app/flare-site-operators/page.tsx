@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     type: 'article',
   },
   alternates: {
-    canonical: '/flare',
+    canonical: '/flare-site-operators',
   },
 }
 

@@ -1,4 +1,20 @@
 import Link from 'next/link'
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Copyright Notice | MCF.DIGITAL',
+  description:
+    'Read ownership, permitted use, prohibited use, and licensing terms for content on the MCF.DIGITAL platform.',
+  openGraph: {
+    title: 'Copyright Notice | MCF.DIGITAL',
+    description:
+      'Read ownership, permitted use, prohibited use, and licensing terms for content on the MCF.DIGITAL platform.',
+    type: 'website',
+  },
+  alternates: {
+    canonical: '/copyright-notice',
+  },
+}
 
 export default function CopyrightNoticePage() {
   return (
