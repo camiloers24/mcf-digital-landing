@@ -6,6 +6,12 @@ import IllustrationStrip from '../../components/IllustrationStrip'
 import NetbackForm from '../../components/NetbackForm'
 import HeroVideo from '../../components/HeroVideo'
 import JsonLd from '../../components/JsonLd'
+import { breadcrumbSchema } from '../../lib/schema'
+
+const breadcrumbs = breadcrumbSchema([
+  { name: 'Home', url: 'https://mcf.digital/' },
+  { name: 'Low Netback', url: 'https://mcf.digital/low-netback' },
+])
 
 const serviceSchema = {
   '@context': 'https://schema.org',
@@ -45,6 +51,7 @@ export default function LowNetbackPage() {
   return (
     <>
       <JsonLd data={serviceSchema} />
+      <JsonLd data={breadcrumbs} />
       <main>
         <section className="hero netbacks-hero">
         <HeroVideo poster="/assets/netback-hero.jpg" />

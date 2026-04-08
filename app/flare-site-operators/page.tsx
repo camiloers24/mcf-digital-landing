@@ -5,6 +5,12 @@ import FlarePadForm from '../../components/FlarePadForm'
 import IllustrationStrip from '../../components/IllustrationStrip'
 import HeroVideo from '../../components/HeroVideo'
 import JsonLd from '../../components/JsonLd'
+import { breadcrumbSchema } from '../../lib/schema'
+
+const breadcrumbs = breadcrumbSchema([
+  { name: 'Home', url: 'https://mcf.digital/' },
+  { name: 'Flare Site Operators', url: 'https://mcf.digital/flare-site-operators' },
+])
 
 const serviceSchema = {
   '@context': 'https://schema.org',
@@ -44,6 +50,7 @@ export default function FlareSiteOperatorsPage() {
   return (
     <>
       <JsonLd data={serviceSchema} />
+      <JsonLd data={breadcrumbs} />
       <main>
         <section className="hero flare-hero">
         <HeroVideo poster="/assets/flare-hero.jpg" />

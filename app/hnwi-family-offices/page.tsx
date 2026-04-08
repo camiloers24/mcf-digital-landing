@@ -4,6 +4,12 @@ import DownloadButton from '../../components/DownloadButton'
 import InvestorsForm from '../../components/InvestorsForm'
 import HeroVideo from '../../components/HeroVideo'
 import JsonLd from '../../components/JsonLd'
+import { breadcrumbSchema } from '../../lib/schema'
+
+const breadcrumbs = breadcrumbSchema([
+  { name: 'Home', url: 'https://mcf.digital/' },
+  { name: 'HNWI & Family Offices', url: 'https://mcf.digital/hnwi-family-offices' },
+])
 
 const serviceSchema = {
   '@context': 'https://schema.org',
@@ -43,6 +49,7 @@ export default function HnwiPage() {
   return (
     <>
       <JsonLd data={serviceSchema} />
+      <JsonLd data={breadcrumbs} />
       <main>
         <section className="hero investors-hero">
         <HeroVideo poster="/assets/hnwi-hero.jpg" />

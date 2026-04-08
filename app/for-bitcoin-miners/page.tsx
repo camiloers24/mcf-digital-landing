@@ -4,6 +4,12 @@ import IllustrationStrip from '../../components/IllustrationStrip'
 import MinersForm from '../../components/MinersForm'
 import HeroVideo from '../../components/HeroVideo'
 import JsonLd from '../../components/JsonLd'
+import { breadcrumbSchema } from '../../lib/schema'
+
+const breadcrumbs = breadcrumbSchema([
+  { name: 'Home', url: 'https://mcf.digital/' },
+  { name: 'For Bitcoin Miners', url: 'https://mcf.digital/for-bitcoin-miners' },
+])
 
 const serviceSchema = {
   '@context': 'https://schema.org',
@@ -43,6 +49,7 @@ export default function ForMinersPage() {
   return (
     <>
       <JsonLd data={serviceSchema} />
+      <JsonLd data={breadcrumbs} />
       <main>
         <section className="hero miners-hero">
         <HeroVideo poster="/assets/miners-hero.jpg" />

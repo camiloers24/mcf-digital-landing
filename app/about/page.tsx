@@ -1,6 +1,13 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import HeroVideo from '../../components/HeroVideo'
+import JsonLd from '../../components/JsonLd'
+import { breadcrumbSchema } from '../../lib/schema'
+
+const breadcrumbs = breadcrumbSchema([
+  { name: 'Home', url: 'https://mcf.digital/' },
+  { name: 'About', url: 'https://mcf.digital/about' },
+])
 
 export const metadata: Metadata = {
   title: 'About MCF.digital | Stranded Gas to Bitcoin Build-and-Run Operator',
@@ -27,6 +34,7 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <>
+      <JsonLd data={breadcrumbs} />
       <header className="hero">
         <HeroVideo poster="/assets/about-hero.jpg" />
         <div className="scrim" />

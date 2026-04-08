@@ -1,5 +1,12 @@
 import type { Metadata } from 'next'
 import ContactForm from './ContactForm'
+import JsonLd from '../../components/JsonLd'
+import { breadcrumbSchema } from '../../lib/schema'
+
+const breadcrumbs = breadcrumbSchema([
+  { name: 'Home', url: 'https://mcf.digital/' },
+  { name: 'Contact', url: 'https://mcf.digital/contact' },
+])
 
 export const metadata: Metadata = {
   title: 'Contact MCF.digital | Talk to a Stranded Gas Engineer',
@@ -24,5 +31,10 @@ export const metadata: Metadata = {
 }
 
 export default function ContactPage() {
-  return <ContactForm />
+  return (
+    <>
+      <JsonLd data={breadcrumbs} />
+      <ContactForm />
+    </>
+  )
 }
