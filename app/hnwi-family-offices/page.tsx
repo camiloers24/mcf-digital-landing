@@ -3,26 +3,48 @@ import type { Metadata } from 'next'
 import DownloadButton from '../../components/DownloadButton'
 import InvestorsForm from '../../components/InvestorsForm'
 import HeroVideo from '../../components/HeroVideo'
+import JsonLd from '../../components/JsonLd'
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Real-Asset Bitcoin Investment for HNWI and Family Offices',
+  provider: { '@type': 'Organization', name: 'MCF.digital' },
+  description:
+    'MCF.digital offers high-net-worth individuals and family offices direct ownership of real operating assets in stranded gas Bitcoin production. Custody-first payouts, clean reporting, and direct access to project economics.',
+  areaServed: 'United States',
+  serviceType: 'Stranded Gas Bitcoin Mining Investment',
+  url: 'https://mcf.digital/hnwi-family-offices',
+}
 
 export const metadata: Metadata = {
-  title: 'White-Glove Bitcoin Production, Backed by Real Assets | MCF.DIGITAL',
+  title: 'Real-Asset Bitcoin Investment | Stranded Gas Projects | MCF.digital',
   description:
-    'Deploy capital into projects that convert stranded energy into daily BTC flow. Custody-first payouts, depreciable hardware, optional hedging for stability.',
+    'Own real operating assets in stranded gas Bitcoin production. Custody-first payouts, clean reporting, and direct access to project economics.',
   openGraph: {
-    title: 'White-Glove Bitcoin Production, Backed by Real Assets | MCF.DIGITAL',
+    title: 'Real-Asset Bitcoin Investment | Stranded Gas Projects | MCF.digital',
     description:
-      'Deploy capital into projects that convert stranded energy into daily BTC flow. Custody-first payouts, depreciable hardware, optional hedging for stability.',
-    type: 'article',
+      'Own real operating assets in stranded gas Bitcoin production. Custody-first payouts, clean reporting, and direct access to project economics.',
+    type: 'website',
+    url: 'https://mcf.digital/hnwi-family-offices',
+    siteName: 'MCF.digital',
+    images: [{ url: 'https://mcf.digital/assets/og-hnwi.png', width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    site: '@mcfdigital', // TODO: VERIFY HANDLE
   },
   alternates: {
-    canonical: '/investors',
+    canonical: 'https://mcf.digital/hnwi-family-offices',
   },
 }
 
 export default function HnwiPage() {
   return (
-    <main>
-      <section className="hero investors-hero">
+    <>
+      <JsonLd data={serviceSchema} />
+      <main>
+        <section className="hero investors-hero">
         <HeroVideo poster="/assets/hnwi-hero.jpg" />
         <div className="scrim" />
         <div className="content wrap hero-inner">
@@ -157,6 +179,7 @@ export default function HnwiPage() {
           <small>Not tax or investment advice. All forward projections are illustrative.</small>
         </p>
       </section>
-    </main>
+      </main>
+    </>
   )
 }

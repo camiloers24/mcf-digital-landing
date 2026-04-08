@@ -3,26 +3,48 @@ import type { Metadata } from 'next'
 import IllustrationStrip from '../../components/IllustrationStrip'
 import MinersForm from '../../components/MinersForm'
 import HeroVideo from '../../components/HeroVideo'
+import JsonLd from '../../components/JsonLd'
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Reliable Stranded Gas Mining Pads for Bitcoin Miners',
+  provider: { '@type': 'Organization', name: 'MCF.digital' },
+  description:
+    'MCF.digital delivers field-ready stranded gas mining pads with confirmed gas supply, sized gensets, thermal management, and built-in service access. No surprise shutdowns.',
+  areaServed: 'United States',
+  serviceType: 'Stranded Gas Bitcoin Mining Pad Deployment',
+  url: 'https://mcf.digital/for-bitcoin-miners',
+}
 
 export const metadata: Metadata = {
-  title: 'Produce Bitcoin at Cost, Not Retail | MCF.DIGITAL',
+  title: 'Reliable Stranded Gas Mining Pads | Field-Ready Compute | MCF.digital',
   description:
-    'We match miners or capital with below-grid MCF. Custody first, clear fee stack, optional hash hedge. From flare stack to sat stack.',
+    'MCF.digital delivers pads that produce. Gas supply confirmed, genset sized, thermals managed, and service access built in. No surprise shutdowns.',
   openGraph: {
-    title: 'Produce Bitcoin at Cost, Not Retail | MCF.DIGITAL',
+    title: 'Reliable Stranded Gas Mining Pads | Field-Ready Compute | MCF.digital',
     description:
-      'We match miners or capital with below-grid MCF. Custody first, clear fee stack, optional hash hedge. From flare stack to sat stack.',
-    type: 'article',
+      'MCF.digital delivers pads that produce. Gas supply confirmed, genset sized, thermals managed, and service access built in. No surprise shutdowns.',
+    type: 'website',
+    url: 'https://mcf.digital/for-bitcoin-miners',
+    siteName: 'MCF.digital',
+    images: [{ url: 'https://mcf.digital/assets/og-miners.png', width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    site: '@mcfdigital', // TODO: VERIFY HANDLE
   },
   alternates: {
-    canonical: '/miners',
+    canonical: 'https://mcf.digital/for-bitcoin-miners',
   },
 }
 
 export default function ForMinersPage() {
   return (
-    <main>
-      <section className="hero miners-hero">
+    <>
+      <JsonLd data={serviceSchema} />
+      <main>
+        <section className="hero miners-hero">
         <HeroVideo poster="/assets/miners-hero.jpg" />
         <div className="scrim" />
         <div className="content wrap hero-inner">
@@ -126,8 +148,8 @@ export default function ForMinersPage() {
           cols={2}
           ratio="16 / 9"
           items={[
-            { src: '/assets/illustrations/bitcoin-miners.png', alt: 'Miner container design', caption: 'Container design' },
-            { src: '/assets/illustrations/home-2.png', alt: 'Thermal & air path', caption: 'Thermal & air path' },
+            { src: '/assets/illustrations/bitcoin-miners.png', alt: 'Bitcoin mining container design — air path routing, ASIC racking, and thermal management for field deployment', caption: 'Container design' },
+            { src: '/assets/illustrations/home-2.png', alt: 'On-lease Bitcoin mining compute container deployed at an oil and gas wellhead pad', caption: 'Thermal & air path' },
           ]}
         />
       </section>
@@ -164,6 +186,7 @@ export default function ForMinersPage() {
           <small>Not tax or investment advice. Mining results vary with price, difficulty, uptime, and site conditions.</small>
         </p>
       </section>
-    </main>
+      </main>
+    </>
   )
 }

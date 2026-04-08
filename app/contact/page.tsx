@@ -2,17 +2,24 @@ import type { Metadata } from 'next'
 import ContactForm from './ContactForm'
 
 export const metadata: Metadata = {
-  title: 'Contact MCF.DIGITAL | Talk to an Engineer',
+  title: 'Contact MCF.digital | Talk to a Stranded Gas Engineer',
   description:
-    'Questions on flare mitigation, netback uplift, hosting or JV. Send details or book a 15-minute fit call. We reply with clear steps and a pricing path.',
+    'Talk to an MCF.digital engineer about your stranded gas or flare site. 15-minute fit calls available. No BTC knowledge required.',
   openGraph: {
-    title: 'Contact MCF.DIGITAL | Talk to an Engineer',
+    title: 'Contact MCF.digital | Talk to a Stranded Gas Engineer',
     description:
-      'Questions on flare mitigation, netback uplift, hosting or JV. Send details or book a 15-minute fit call. We reply with clear steps and a pricing path.',
+      'Talk to an MCF.digital engineer about your stranded gas or flare site. 15-minute fit calls available. No BTC knowledge required.',
     type: 'website',
+    url: 'https://mcf.digital/contact',
+    siteName: 'MCF.digital',
+    images: [{ url: 'https://mcf.digital/assets/og-contact.png', width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    site: '@mcfdigital', // TODO: VERIFY HANDLE
   },
   alternates: {
-    canonical: '/contact',
+    canonical: 'https://mcf.digital/contact',
   },
 }
 

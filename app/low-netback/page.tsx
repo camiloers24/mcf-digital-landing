@@ -5,26 +5,48 @@ import DownloadButton from '../../components/DownloadButton'
 import IllustrationStrip from '../../components/IllustrationStrip'
 import NetbackForm from '../../components/NetbackForm'
 import HeroVideo from '../../components/HeroVideo'
+import JsonLd from '../../components/JsonLd'
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'On-Lease Bitcoin Mining for Low Gas Netback Sites',
+  provider: { '@type': 'Organization', name: 'MCF.digital' },
+  description:
+    'MCF.digital builds on-lease gas-to-Bitcoin carve-outs for producers with thin netbacks. Operators keep their pipeline deal while adding an on-pad compute offtake that beats pipeline take-home economics.',
+  areaServed: 'United States',
+  serviceType: 'Low Netback Gas Monetization',
+  url: 'https://mcf.digital/low-netback',
+}
 
 export const metadata: Metadata = {
-  title: 'Show Us Your Weakest Netbacks | MCF.DIGITAL',
+  title: 'Beat Low Gas Netbacks with On-Lease Bitcoin Mining | MCF.digital',
   description:
-    'Carve out a take-in-kind base volume, beat the pipeline netback on pad with compute offtake. Keep your pipeline deal, fix the margins at the edges.',
+    'Your gas netback is thin because midstream takes the margin. MCF.digital builds an on-lease carve-out that pencils at parity. See the math for your pad.',
   openGraph: {
-    title: 'Show Us Your Weakest Netbacks | MCF.DIGITAL',
+    title: 'Beat Low Gas Netbacks with On-Lease Bitcoin Mining | MCF.digital',
     description:
-      'Carve out a take-in-kind base volume, beat the pipeline netback on pad with compute offtake. Keep your pipeline deal, fix the margins at the edges.',
-    type: 'article',
+      'Your gas netback is thin because midstream takes the margin. MCF.digital builds an on-lease carve-out that pencils at parity. See the math for your pad.',
+    type: 'website',
+    url: 'https://mcf.digital/low-netback',
+    siteName: 'MCF.digital',
+    images: [{ url: 'https://mcf.digital/assets/og-netback.png', width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    site: '@mcfdigital', // TODO: VERIFY HANDLE
   },
   alternates: {
-    canonical: '/netbacks',
+    canonical: 'https://mcf.digital/low-netback',
   },
 }
 
 export default function LowNetbackPage() {
   return (
-    <main>
-      <section className="hero netbacks-hero">
+    <>
+      <JsonLd data={serviceSchema} />
+      <main>
+        <section className="hero netbacks-hero">
         <HeroVideo poster="/assets/netback-hero.jpg" />
         <div className="scrim" />
         <div className="content wrap hero-inner">
@@ -97,9 +119,9 @@ export default function LowNetbackPage() {
           cols={3}
           ratio="16 / 9"
           items={[
-            { src: '/assets/illustrations/low-netbacks.png', alt: 'Economics overview', caption: 'Economics overview' },
-            { src: '/assets/illustrations/low-netbacks-2.png', alt: 'Deployment sequence', caption: 'Deployment sequence' },
-            { src: '/assets/illustrations/low-netbacks-3.png', alt: 'On-lease protections', caption: 'On-lease protections' },
+            { src: '/assets/illustrations/low-netbacks.png', alt: 'On-lease carve-out economics compared to pipeline netback — MCF.digital netback improvement diagram', caption: 'Economics overview' },
+            { src: '/assets/illustrations/low-netbacks-2.png', alt: 'Step-by-step deployment sequence for an on-lease low-netback gas-to-Bitcoin system', caption: 'Deployment sequence' },
+            { src: '/assets/illustrations/low-netbacks-3.png', alt: 'On-lease physical and commercial protections for low-netback gas Bitcoin mining operations', caption: 'On-lease protections' },
           ]}
         />
       </section>
@@ -166,6 +188,7 @@ export default function LowNetbackPage() {
           <small>Not tax or investment advice. All pricing subject to assay, flow, and site conditions.</small>
         </p>
       </section>
-    </main>
+      </main>
+    </>
   )
 }

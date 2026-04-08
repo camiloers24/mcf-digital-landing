@@ -4,26 +4,48 @@ import DownloadButton from '../../components/DownloadButton'
 import FlarePadForm from '../../components/FlarePadForm'
 import IllustrationStrip from '../../components/IllustrationStrip'
 import HeroVideo from '../../components/HeroVideo'
+import JsonLd from '../../components/JsonLd'
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'On-Lease Flare Gas Bitcoin Mining Deployment',
+  provider: { '@type': 'Organization', name: 'MCF.digital' },
+  description:
+    'MCF.digital builds and operates on-lease Bitcoin mining systems for oil and gas operators with flaring or stranded gas sites. Operators receive compliance relief, pad economics improvement, and custody-first revenue reporting.',
+  areaServed: 'United States',
+  serviceType: 'Stranded Gas Bitcoin Mining Deployment',
+  url: 'https://mcf.digital/flare-site-operators',
+}
 
 export const metadata: Metadata = {
-  title: 'Cut Your Flare Stack, Grow Your Sat Stack | MCF.DIGITAL',
+  title: 'Flare Gas Bitcoin Mining for Operators | MCF.digital',
   description:
-    'Turn fuel gas into on-lease power and compute. From flare to fair value, from BTUs to BTC.',
+    'Turn your flare gas liability into on-lease Bitcoin production. MCF.digital provides field-ready deployment with no BTC on your balance sheet. Fast compliance relief.',
   openGraph: {
-    title: 'Cut Your Flare Stack, Grow Your Sat Stack | MCF.DIGITAL',
+    title: 'Flare Gas Bitcoin Mining for Operators | MCF.digital',
     description:
-      'Turn fuel gas into on-lease power and compute. From flare to fair value, from BTUs to BTC.',
-    type: 'article',
+      'Turn your flare gas liability into on-lease Bitcoin production. MCF.digital provides field-ready deployment with no BTC on your balance sheet. Fast compliance relief.',
+    type: 'website',
+    url: 'https://mcf.digital/flare-site-operators',
+    siteName: 'MCF.digital',
+    images: [{ url: 'https://mcf.digital/assets/og-flare.png', width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    site: '@mcfdigital', // TODO: VERIFY HANDLE
   },
   alternates: {
-    canonical: '/flare',
+    canonical: 'https://mcf.digital/flare-site-operators',
   },
 }
 
 export default function FlareSiteOperatorsPage() {
   return (
-    <main>
-      <section className="hero flare-hero">
+    <>
+      <JsonLd data={serviceSchema} />
+      <main>
+        <section className="hero flare-hero">
         <HeroVideo poster="/assets/flare-hero.jpg" />
         <div className="scrim" />
         <div className="content wrap">
@@ -161,9 +183,9 @@ export default function FlareSiteOperatorsPage() {
           cols={3}
           ratio="16 / 9"
           items={[
-            { src: '/assets/illustrations/flare-sites.png', alt: 'Flare site overview', caption: 'Flare site overview' },
-            { src: '/assets/illustrations/flare-sites-2.png', alt: 'Power path & setbacks', caption: 'Power path & setbacks' },
-            { src: '/assets/illustrations/flare-sites-3.png', alt: 'Container & clearances', caption: 'Container & clearances' },
+            { src: '/assets/illustrations/flare-sites.png', alt: 'MCF.digital flare gas site layout — genset placement, gas interconnect, and ASIC container on a wellhead pad', caption: 'Flare site overview' },
+            { src: '/assets/illustrations/flare-sites-2.png', alt: 'Power path routing and safety setback distances for an on-lease flare gas Bitcoin mining deployment', caption: 'Power path & setbacks' },
+            { src: '/assets/illustrations/flare-sites-3.png', alt: 'ASIC container clearance zones and service access routes on a flare gas mining pad', caption: 'Container & clearances' },
           ]}
         />
       </section>
@@ -298,6 +320,7 @@ export default function FlareSiteOperatorsPage() {
           <small>Not tax or investment advice. Royalty and ORRI handling per lease language.</small>
         </p>
       </section>
-    </main>
+      </main>
+    </>
   )
 }

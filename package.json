@@ -10,17 +10,18 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@types/react-dom": "18.2.18",
     "next": "14.2.4",
     "react": "18.3.1",
-    "react-dom": "18.3.1",
-    "typescript": "5.4.2",
-    "@types/node": "20.10.6",
-    "@types/react": "18.2.45",
-    "@types/react-dom": "18.2.18"
+    "react-dom": "18.3.1"
   },
   "devDependencies": {
+    "@types/node": "25.5.2",
+    "@types/react": "19.2.14",
     "eslint": "8.57.0",
-    "eslint-config-next": "14.2.4"
+    "eslint-config-next": "14.2.4",
+    "sharp": "^0.34.5",
+    "typescript": "6.0.2"
   },
   "engines": {
     "node": "20.x",

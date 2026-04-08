@@ -3,17 +3,24 @@ import Link from 'next/link'
 import HeroVideo from '../../components/HeroVideo'
 
 export const metadata: Metadata = {
-  title: 'About MCF.DIGITAL | Where Molecules Become Money',
+  title: 'About MCF.digital | Stranded Gas to Bitcoin Build-and-Run Operator',
   description:
-    'MCF DIGITAL turns stranded and undervalued gas into profitable bitcoin production with custody-first operations, field-smart execution, and aligned incentives for producers, miners, and investors.',
+    'MCF.digital is a build-and-run operator for stranded gas Bitcoin mining. We match operators, miners, and capital — then build and run the site so everyone wins.',
   openGraph: {
-    title: 'About MCF.DIGITAL | Where Molecules Become Money',
+    title: 'About MCF.digital | Stranded Gas to Bitcoin Build-and-Run Operator',
     description:
-      'MCF DIGITAL turns stranded and undervalued gas into profitable bitcoin production with custody-first operations, field-smart execution, and aligned incentives for producers, miners, and investors.',
-    type: 'profile',
+      'MCF.digital is a build-and-run operator for stranded gas Bitcoin mining. We match operators, miners, and capital — then build and run the site so everyone wins.',
+    type: 'website',
+    url: 'https://mcf.digital/about',
+    siteName: 'MCF.digital',
+    images: [{ url: 'https://mcf.digital/assets/og-about.png', width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    site: '@mcfdigital', // TODO: VERIFY HANDLE
   },
   alternates: {
-    canonical: '/about',
+    canonical: 'https://mcf.digital/about',
   },
 }
 
