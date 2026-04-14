@@ -6,7 +6,7 @@ type HeroVideoProps = {
 }
 
 export default function HeroVideo({
-  poster = '/assets/illustrations/home-2.png',
+  poster = '/media/MCF_web_video_poster.jpg',
   className,
   filter,
 }: HeroVideoProps) {
@@ -21,8 +21,8 @@ export default function HeroVideo({
       style={filter ? { filter } : undefined}
       aria-hidden="true"
     >
-      <source src="/media/hero.mp4" type="video/mp4" />
-      Your browser does not support the video tag.
+      <source src="/media/MCF_web_video.webm" type="video/webm" />
+      <source src="/media/MCF_web_video.mp4" type="video/mp4" />
     </video>
   )
 }

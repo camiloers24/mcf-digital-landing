@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { useState } from 'react'
 
 export default function SiteNav() {
@@ -10,9 +11,15 @@ export default function SiteNav() {
     <>
       <nav className="nav" aria-label="Primary">
         <div className="inner wrap">
-          <Link href="/" className="brand">
-            <span className="dot" aria-hidden="true"></span>
-            <span>MCF.DIGITAL</span>
+          <Link href="/" className="brand" aria-label="MCF.DIGITAL — Home">
+            <Image
+              src="/assets/logo-white-h.svg"
+              alt="mcf.digital"
+              width={120}
+              height={28}
+              priority
+              style={{ display: 'block' }}
+            />
           </Link>
 
           {/* Desktop links */}
@@ -52,8 +59,13 @@ export default function SiteNav() {
           <div className="mobile-panel">
             <div className="mobile-top">
               <span className="brand-mini">
-                <span className="dot" />
-                MCF.DIGITAL
+                <Image
+                  src="/assets/logo-white-h.svg"
+                  alt="mcf.digital"
+                  width={100}
+                  height={24}
+                  style={{ display: 'block' }}
+                />
               </span>
               <button className="mobile-x" aria-label="Close menu" onClick={() => setOpen(false)}>×</button>
             </div>
