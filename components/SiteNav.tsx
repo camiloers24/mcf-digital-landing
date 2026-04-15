@@ -3,9 +3,11 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { useState } from 'react'
+import { usePathname } from 'next/navigation'
 
 export default function SiteNav() {
   const [open, setOpen] = useState(false)
+  const pathname = usePathname()
 
   return (
     <>
@@ -24,24 +26,24 @@ export default function SiteNav() {
 
           {/* Desktop links */}
           <div className="links nav-desktop" role="navigation">
-            <Link href="/flare-site-operators">Flare Site Operators</Link>
-            <Link href="/low-netback">Low Netback Sites</Link>
-            <Link href="/for-bitcoin-miners">For Bitcoin Miners</Link>
-            <Link href="/hnwi-family-offices">HNWI & Family Offices</Link>
-            <Link href="/about">About Us</Link>
+            <Link href="/flare-site-operators" className={pathname === '/flare-site-operators' ? 'nav-active' : ''}>Flare Site Operators</Link>
+            <Link href="/low-netback" className={pathname === '/low-netback' ? 'nav-active' : ''}>Low Netback Sites</Link>
+            <Link href="/for-bitcoin-miners" className={pathname === '/for-bitcoin-miners' ? 'nav-active' : ''}>For Bitcoin Miners</Link>
+            <Link href="/hnwi-family-offices" className={pathname === '/hnwi-family-offices' ? 'nav-active' : ''}>HNWI & Family Offices</Link>
+            <Link href="/about" className={pathname === '/about' ? 'nav-active' : ''}>About Us</Link>
             <Link href="/contact" className="cta">Contact</Link>
           </div>
 
           {/* Mobile hamburger */}
           <button
-            className="hamburger"
-            aria-label="Open menu"
+            className={`hamburger${open ? ' is-open' : ''}`}
+            aria-label={open ? 'Close menu' : 'Open menu'}
             aria-expanded={open}
-            onClick={() => setOpen(true)}
+            onClick={() => setOpen(!open)}
           >
-            <span />
-            <span />
-            <span />
+            <span className="bar bar-top" />
+            <span className="bar bar-mid" />
+            <span className="bar bar-bot" />
           </button>
         </div>
       </nav>
@@ -67,14 +69,17 @@ export default function SiteNav() {
                   style={{ display: 'block' }}
                 />
               </span>
-              <button className="mobile-x" aria-label="Close menu" onClick={() => setOpen(false)}>×</button>
             </div>
+            <button className="mobile-close" aria-label="Close menu" onClick={() => setOpen(false)}>
+              <span className="bar bar-top" />
+              <span className="bar bar-bot" />
+            </button>
             <div className="mobile-links">
-              <Link href="/flare-site-operators" onClick={() => setOpen(false)}>Flare Site Operators</Link>
-              <Link href="/low-netback" onClick={() => setOpen(false)}>Low Netback Sites</Link>
-              <Link href="/for-bitcoin-miners" onClick={() => setOpen(false)}>For Bitcoin Miners</Link>
-              <Link href="/hnwi-family-offices" onClick={() => setOpen(false)}>HNWI & Family Offices</Link>
-              <Link href="/about" onClick={() => setOpen(false)}>About Us</Link>
+              <Link href="/flare-site-operators" className={pathname === '/flare-site-operators' ? 'nav-active' : ''} onClick={() => setOpen(false)}>Flare Site Operators</Link>
+              <Link href="/low-netback" className={pathname === '/low-netback' ? 'nav-active' : ''} onClick={() => setOpen(false)}>Low Netback Sites</Link>
+              <Link href="/for-bitcoin-miners" className={pathname === '/for-bitcoin-miners' ? 'nav-active' : ''} onClick={() => setOpen(false)}>For Bitcoin Miners</Link>
+              <Link href="/hnwi-family-offices" className={pathname === '/hnwi-family-offices' ? 'nav-active' : ''} onClick={() => setOpen(false)}>HNWI & Family Offices</Link>
+              <Link href="/about" className={pathname === '/about' ? 'nav-active' : ''} onClick={() => setOpen(false)}>About Us</Link>
               <Link href="/contact" className="btn acc lg" onClick={() => setOpen(false)}>Contact</Link>
             </div>
           </div>

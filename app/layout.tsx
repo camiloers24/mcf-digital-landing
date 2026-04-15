@@ -19,6 +19,7 @@ import ContactFab from '../components/ContactFab'
 import IntelligenceFab from '../components/IntelligenceFab'
 import JsonLd from '../components/JsonLd'
 import HeroVideoBackground from '../components/HeroVideoBackground'
+import SmoothScroll from '../components/SmoothScroll'
 
 const organizationSchema = {
   '@context': 'https://schema.org',
@@ -82,6 +83,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body>
         <HeroVideoBackground />
+        <SmoothScroll />
         <div id="progress" aria-hidden />
         <LeadProvider>
           {/* FIX: Removed the redundant <nav> and <div> wrappers. 
