@@ -29,20 +29,18 @@ export default function ContactPage() {
   return (
     <>
       <JsonLd data={breadcrumbs} />
-
-      <section className="hero contact-hero">
+      <section className="contact-hero-section">
         <div className="scrim" />
-        <div className="content wrap">
-          <h1>Contact</h1>
-          <p className="lead">Tell us a bit about your site or role and we&apos;ll get back fast.</p>
+        <div className="wrap">
+          <div className="contact-layout">
+            <div className="contact-header">
+              <h1>Contact</h1>
+              <p className="lead">Tell us a bit about your site or role and we&apos;ll get back fast.</p>
+            </div>
+            <ContactForm />
+          </div>
         </div>
       </section>
-
-      <main>
-        <section className="wrap no-bg contact-section">
-          <ContactForm />
-        </section>
-      </main>
     </>
   )
 }
