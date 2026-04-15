@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     type: 'website',
     url: 'https://mcf.digital/contact',
     siteName: 'MCF.digital',
-    images: [{ url: 'https://mcf.digital/assets/og-contact.png', width: 1200, height: 630 }],
+    images: [{ url: '/assets/og-contact.png', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',

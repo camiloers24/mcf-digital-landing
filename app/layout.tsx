@@ -18,6 +18,7 @@ import Footer from '../components/Footer'
 import ContactFab from '../components/ContactFab'
 import IntelligenceFab from '../components/IntelligenceFab'
 import JsonLd from '../components/JsonLd'
+import HeroVideoBackground from '../components/HeroVideoBackground'
 
 const organizationSchema = {
   '@context': 'https://schema.org',
@@ -39,6 +40,7 @@ const organizationSchema = {
 }
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://mcf.digital'),
   title: 'Turn Stranded Gas Into Bitcoin Production | MCF.digital',
   description:
     'MCF.digital matches O&G operators, miners, and capital — then builds and runs on-lease power and compute. Operators cut flaring. Miners produce BTC at cost.',
@@ -49,7 +51,7 @@ export const metadata: Metadata = {
     type: 'website',
     url: 'https://mcf.digital/',
     siteName: 'MCF.digital',
-    images: [{ url: 'https://mcf.digital/assets/og-home.png', width: 1200, height: 630 }],
+    images: [{ url: '/assets/og-home.png', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
@@ -59,7 +61,11 @@ export const metadata: Metadata = {
     canonical: 'https://mcf.digital/',
   },
   icons: {
-    icon: '/assets/favicon.ico',
+    icon: [
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+      { url: '/assets/favicon.ico' },
+    ],
+    apple: '/apple-touch-icon.png',
   },
 }
 
@@ -75,6 +81,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <JsonLd data={organizationSchema} />
       </head>
       <body>
+        <HeroVideoBackground />
         <div id="progress" aria-hidden />
         <LeadProvider>
           {/* FIX: Removed the redundant <nav> and <div> wrappers. 

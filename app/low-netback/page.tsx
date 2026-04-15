@@ -4,7 +4,6 @@ import type { Metadata } from 'next'
 import DownloadButton from '../../components/DownloadButton'
 import IllustrationStrip from '../../components/IllustrationStrip'
 import NetbackForm from '../../components/NetbackForm'
-import HeroVideo from '../../components/HeroVideo'
 import JsonLd from '../../components/JsonLd'
 import { breadcrumbSchema } from '../../lib/schema'
 
@@ -36,7 +35,7 @@ export const metadata: Metadata = {
     type: 'website',
     url: 'https://mcf.digital/low-netback',
     siteName: 'MCF.digital',
-    images: [{ url: 'https://mcf.digital/assets/og-netback.png', width: 1200, height: 630 }],
+    images: [{ url: '/assets/og-netback.png', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
@@ -52,10 +51,8 @@ export default function LowNetbackPage() {
     <>
       <JsonLd data={serviceSchema} />
       <JsonLd data={breadcrumbs} />
-      <main>
-        <section className="hero netbacks-hero">
-        <HeroVideo poster="/assets/netback-hero.jpg" />
-        <div className="scrim" />
+      <section className="hero netbacks-hero">
+<div className="scrim" />
         <div className="content wrap hero-inner">
           <div className="hero-copy">
             <div className="kicker">Low Netbacks With Existing Offtake</div>
@@ -88,9 +85,10 @@ export default function LowNetbackPage() {
           </div>
         </div>
       </section>
+      <main>
 
-      <section className="wrap">
-        <h2>Why this matters when netbacks sag</h2>
+        <section className="wrap">
+          <h2>Why this matters when netbacks sag</h2>
         <div className="grid cols-2">
           <div className="card"><h3>Basis bites</h3><p>Differentials and G&amp;P fees stack up until some pads bring home pennies per MCF.</p></div>
           <div className="card"><h3>MVC exposure</h3><p>Minimum volume commitments make curtailment expensive, even when pricing is upside down.</p></div>

@@ -2,7 +2,6 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 import DownloadButton from '../../components/DownloadButton'
 import InvestorsForm from '../../components/InvestorsForm'
-import HeroVideo from '../../components/HeroVideo'
 import JsonLd from '../../components/JsonLd'
 import { breadcrumbSchema } from '../../lib/schema'
 
@@ -34,7 +33,7 @@ export const metadata: Metadata = {
     type: 'website',
     url: 'https://mcf.digital/hnwi-family-offices',
     siteName: 'MCF.digital',
-    images: [{ url: 'https://mcf.digital/assets/og-hnwi.png', width: 1200, height: 630 }],
+    images: [{ url: '/assets/og-hnwi.png', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
@@ -50,10 +49,8 @@ export default function HnwiPage() {
     <>
       <JsonLd data={serviceSchema} />
       <JsonLd data={breadcrumbs} />
-      <main>
-        <section className="hero investors-hero">
-        <HeroVideo poster="/assets/hnwi-hero.jpg" />
-        <div className="scrim" />
+      <section className="hero investors-hero">
+<div className="scrim" />
         <div className="content wrap hero-inner">
           <div className="hero-copy">
             <div className="kicker">HNWI &amp; Family Offices</div>
@@ -83,9 +80,10 @@ export default function HnwiPage() {
           </div>
         </div>
       </section>
+      <main>
 
-      <section className="wrap">
-        <h2>Why production, not just buying</h2>
+        <section className="wrap">
+          <h2>Why production, not just buying</h2>
         <div className="grid cols-2">
           <div className="card"><h3>Cost basis advantage</h3><p>Produce coins at energy cost plus ops instead of paying retail premiums.</p></div>
           <div className="card"><h3>Real assets</h3><p>Miners, power equipment, and containers are depreciable assets you can own.</p></div>

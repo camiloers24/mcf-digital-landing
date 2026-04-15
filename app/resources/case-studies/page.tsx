@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     url: 'https://mcf.digital/resources/case-studies/',
     type: 'website',
     siteName: 'MCF.digital',
-    images: [{ url: 'https://mcf.digital/assets/og-home.png', width: 1200, height: 630 }],
+    images: [{ url: '/assets/og-home.png', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',

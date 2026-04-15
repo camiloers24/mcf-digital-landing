@@ -3,7 +3,6 @@ import type { Metadata } from 'next'
 import DownloadButton from '../../components/DownloadButton'
 import FlarePadForm from '../../components/FlarePadForm'
 import IllustrationStrip from '../../components/IllustrationStrip'
-import HeroVideo from '../../components/HeroVideo'
 import JsonLd from '../../components/JsonLd'
 import { breadcrumbSchema } from '../../lib/schema'
 
@@ -35,7 +34,7 @@ export const metadata: Metadata = {
     type: 'website',
     url: 'https://mcf.digital/flare-site-operators',
     siteName: 'MCF.digital',
-    images: [{ url: 'https://mcf.digital/assets/og-flare.png', width: 1200, height: 630 }],
+    images: [{ url: '/assets/og-flare.png', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
@@ -51,10 +50,8 @@ export default function FlareSiteOperatorsPage() {
     <>
       <JsonLd data={serviceSchema} />
       <JsonLd data={breadcrumbs} />
-      <main>
-        <section className="hero flare-hero">
-        <HeroVideo poster="/assets/flare-hero.jpg" />
-        <div className="scrim" />
+      <section className="hero flare-hero">
+<div className="scrim" />
         <div className="content wrap">
           <div className="kicker">Flare Sites</div>
           <h1>Cut your flare stack, grow your sat stack</h1>
@@ -77,9 +74,10 @@ export default function FlareSiteOperatorsPage() {
           </div>
         </div>
       </section>
+      <main>
 
-      <section className="wrap">
-        <h2>Why this is a no-brainer for a flare pad</h2>
+        <section className="wrap">
+          <h2>Why this is a no-brainer for a flare pad</h2>
         <div className="grid cols-2">
           <div className="card">
             <h3>Flares are pure cost</h3>

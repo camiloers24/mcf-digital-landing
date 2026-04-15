@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import HeroVideo from '../../components/HeroVideo'
 import JsonLd from '../../components/JsonLd'
 import { breadcrumbSchema } from '../../lib/schema'
 
@@ -20,7 +19,7 @@ export const metadata: Metadata = {
     type: 'website',
     url: 'https://mcf.digital/about',
     siteName: 'MCF.digital',
-    images: [{ url: 'https://mcf.digital/assets/og-about.png', width: 1200, height: 630 }],
+    images: [{ url: '/assets/og-about.png', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
@@ -36,8 +35,7 @@ export default function AboutPage() {
     <>
       <JsonLd data={breadcrumbs} />
       <header className="hero">
-        <HeroVideo poster="/assets/about-hero.jpg" />
-        <div className="scrim" />
+<div className="scrim" />
         <div className="content wrap">
           <div className="kicker">About MCF.DIGITAL</div>
           <h1>Where molecules become money.</h1>

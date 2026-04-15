@@ -2,7 +2,6 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 import IllustrationStrip from '../../components/IllustrationStrip'
 import MinersForm from '../../components/MinersForm'
-import HeroVideo from '../../components/HeroVideo'
 import JsonLd from '../../components/JsonLd'
 import { breadcrumbSchema } from '../../lib/schema'
 
@@ -34,7 +33,7 @@ export const metadata: Metadata = {
     type: 'website',
     url: 'https://mcf.digital/for-bitcoin-miners',
     siteName: 'MCF.digital',
-    images: [{ url: 'https://mcf.digital/assets/og-miners.png', width: 1200, height: 630 }],
+    images: [{ url: '/assets/og-miners.png', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
@@ -50,9 +49,8 @@ export default function ForMinersPage() {
     <>
       <JsonLd data={serviceSchema} />
       <JsonLd data={breadcrumbs} />
-      <main>
-        <section className="hero miners-hero">
-        <HeroVideo poster="/assets/miners-hero.jpg" />
+      <section className="hero miners-hero">
+        
         <div className="scrim" />
         <div className="content wrap hero-inner">
           <div className="hero-copy">
@@ -79,9 +77,10 @@ export default function ForMinersPage() {
           </div>
         </div>
       </section>
+      <main>
 
-      <section className="wrap">
-        <h2>What you get with MCF.DIGITAL sites</h2>
+        <section className="wrap">
+          <h2>What you get with MCF.DIGITAL sites</h2>
         <div className="grid cols-2">
           <div className="card"><h3>Cheaper power than typical colo</h3><p>Off-grid, stranded, or sour gas that pencils beats most grid tariffs.</p></div>
           <div className="card"><h3>Custody-first payouts</h3><p>Pool pays to your wallet. Multisig available on request.</p></div>
