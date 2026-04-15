@@ -13,6 +13,11 @@ import {
   // Miners page
   WrenchIcon, ThermometerIcon, CodeIcon, ShareNetworkIcon,
   BuildingsIcon, CoinsIcon, StackIcon, ArrowsOutIcon, GearSixIcon,
+  // HNWI page
+  MagnifyingGlassIcon, ClockIcon, MapPinIcon, ChartLineDownIcon,
+  PresentationChartIcon, CalendarIcon,
+  // About page
+  PhoneCallIcon, HandCoinsIcon, LightbulbIcon,
 } from '@phosphor-icons/react'
 
 export {
@@ -53,4 +58,15 @@ export {
   StackIcon               as Stack,
   ArrowsOutIcon           as ArrowsOut,
   GearSixIcon             as GearSix,
+  // HNWI page
+  MagnifyingGlassIcon     as MagnifyingGlass,
+  ClockIcon               as Clock,
+  MapPinIcon              as MapPin,
+  ChartLineDownIcon       as ChartLineDown,
+  PresentationChartIcon   as PresentationChart,
+  CalendarIcon            as Calendar,
+  // About page
+  PhoneCallIcon           as PhoneCall,
+  HandCoinsIcon           as HandCoins,
+  LightbulbIcon           as Lightbulb,
 }

@@ -694,6 +694,28 @@ select::-ms-expand{display:none}
   .fab-label{ display:none; }
 }
 
+/* ── Contact page ─────────────────────────────────────────────────── */
+.hero.contact-hero .content{ padding-block:90px 70px }
+.contact-section{ display:flex;flex-direction:column;align-items:center }
+.contact-form-card{ width:100%;max-width:780px }
+
+/* About page */
+.about-list{
+  list-style:none;padding:0;margin:8px 0 0;
+  display:flex;flex-direction:column;gap:8px;
+}
+.about-list li{
+  padding-left:18px;position:relative;
+  font-size:.9rem;line-height:1.5;color:var(--muted);
+}
+.about-list li::before{
+  content:'';position:absolute;left:0;top:8px;
+  width:6px;height:6px;border-radius:50%;
+  background:var(--accent);opacity:.7;
+}
+.about-action-card{ justify-content:space-between; }
+.about-action-card .btn{ margin-top:auto;width:100%;justify-content:center; }
+
 /* Intelligence hero */
 .hero.intelligence-hero .hero-bg{
   position:absolute;inset:0;
@@ -1106,7 +1128,9 @@ section.no-bg,section.no-bg:nth-child(even){background:none}
   animation:hero-in .9s cubic-bezier(.16,1,.3,1) both, shimmer 6s linear 1s infinite;
 }
 .hero .kicker{animation:hero-in .9s cubic-bezier(.16,1,.3,1) both;animation-delay:0s;will-change:opacity,transform,filter}
-.hero p.sub{animation:hero-in .9s cubic-bezier(.16,1,.3,1) both;animation-delay:.22s;will-change:opacity,transform,filter}
+.hero p.sub,
+.hero p.lead{animation:hero-in .9s cubic-bezier(.16,1,.3,1) both;animation-delay:.22s;will-change:opacity,transform,filter}
+.hero .hero-actions{animation:hero-in .9s cubic-bezier(.16,1,.3,1) both;animation-delay:.3s;will-change:opacity,transform,filter}
 .hero .cta-row{animation:hero-in .9s cubic-bezier(.16,1,.3,1) both;animation-delay:.38s;will-change:opacity,transform,filter}
 .hero .hero-intel-cta{animation:hero-in .9s cubic-bezier(.16,1,.3,1) both;animation-delay:.52s;will-change:opacity,transform,filter}
 
@@ -1148,7 +1172,7 @@ html::before{
 }
 
 @media(prefers-reduced-motion:reduce){
-  .hero h1,.hero .kicker,.hero p.sub,.hero .cta-row,.hero .hero-intel-cta{animation:none;-webkit-text-fill-color:inherit;background:none;color:var(--ink)}
+  .hero h1,.hero .kicker,.hero p.sub,.hero p.lead,.hero .hero-actions,.hero .cta-row,.hero .hero-intel-cta{animation:none;-webkit-text-fill-color:inherit;background:none;color:var(--ink)}
   html::before{animation:none}
   .intel-btn{animation:none}
   .js-reveal{opacity:1;transform:none;filter:none;transition:none}

@@ -21,20 +21,28 @@ export const metadata: Metadata = {
     siteName: 'MCF.digital',
     images: [{ url: '/assets/og-contact.png', width: 1200, height: 630 }],
   },
-  twitter: {
-    card: 'summary_large_image',
-    site: '@mcfdigital', // TODO: VERIFY HANDLE
-  },
-  alternates: {
-    canonical: 'https://mcf.digital/contact',
-  },
+  twitter: { card: 'summary_large_image', site: '@mcfdigital' },
+  alternates: { canonical: 'https://mcf.digital/contact' },
 }
 
 export default function ContactPage() {
   return (
     <>
       <JsonLd data={breadcrumbs} />
-      <ContactForm />
+
+      <section className="hero contact-hero">
+        <div className="scrim" />
+        <div className="content wrap">
+          <h1>Contact</h1>
+          <p className="lead">Tell us a bit about your site or role and we&apos;ll get back fast.</p>
+        </div>
+      </section>
+
+      <main>
+        <section className="wrap no-bg contact-section">
+          <ContactForm />
+        </section>
+      </main>
     </>
   )
 }
